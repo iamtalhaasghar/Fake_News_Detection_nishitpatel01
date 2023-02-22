@@ -1,0 +1,4 @@
+venv
+__pycache__/DataPrep.cpython-38.pyc
+__pycache__
+glove.6B.50d.txt

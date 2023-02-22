@@ -33,6 +33,7 @@ What things you need to install the software and how to install them:
    conda install -c anaconda numpy
    conda install -c anaconda scipy
    ```   
+4. Download `glove.6B.50d.txt` from https://nlp.stanford.edu/projects/glove/
 
 #### Dataset used
 The data source used for this project is LIAR dataset which contains 3 files with .tsv format for test, train and validation. Below is some description about the data files used for this project.

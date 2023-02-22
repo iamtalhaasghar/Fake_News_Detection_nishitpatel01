@@ -26,6 +26,7 @@ from sklearn.model_selection import learning_curve
 import matplotlib.pyplot as plt
 from sklearn.metrics import precision_recall_curve
 from sklearn.metrics import average_precision_score
+from sklearn import metrics
 
 #string to test
 doc_new = ['obama is running for president in 2016']
@@ -69,7 +70,7 @@ np.mean(predicted_svm == DataPrep.test_news['Label'])
 #using SVM Stochastic Gradient Descent on hinge loss
 sgd_pipeline = Pipeline([
         ('svm2CV',FeatureSelection.countV),
-        ('svm2_clf',SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, n_iter=5))
+        ('svm2_clf',SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3))#, n_iter=5))
         ])
 
 sgd_pipeline.fit(DataPrep.train_news['Statement'],DataPrep.train_news['Label'])
@@ -192,7 +193,7 @@ np.mean(predicted_svm_ngram == DataPrep.test_news['Label'])
 #sgd classifier
 sgd_pipeline_ngram = Pipeline([
          ('sgd_tfidf',FeatureSelection.tfidf_ngram),
-         ('sgd_clf',SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, n_iter=5))
+         ('sgd_clf',SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3))#, n_iter=5))
          ])
 
 sgd_pipeline_ngram.fit(DataPrep.train_news['Statement'],DataPrep.train_news['Label'])
