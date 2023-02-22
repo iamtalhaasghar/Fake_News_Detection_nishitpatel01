@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from flask import Markup
 import pandas as pd
 import sklearn
 import itertools
@@ -12,6 +13,7 @@ from matplotlib import pyplot as plt
 from sklearn.linear_model import PassiveAggressiveClassifier
 from nltk.stem import WordNetLemmatizer
 from nltk.corpus import stopwords
+from prediction import detecting_fake_news
 
 app = Flask(__name__,template_folder='./templates',static_folder='./static')
 
@@ -47,9 +49,11 @@ def home():
 def predict():
     if request.method == 'POST':
         message = request.form['news']
-        pred = fake_news_det(message)
+        #pred = fake_news_det(message)
+        pred = detecting_fake_news(message)
         print(pred)
-        return render_template('index.html', prediction=pred)
+        resp = f'Input: {message} <br /> Truth probability:{pred[0][1]*100}'
+        return render_template('index.html', prediction=Markup(resp))
     else:
         return render_template('index.html', prediction="Something went wrong")
 

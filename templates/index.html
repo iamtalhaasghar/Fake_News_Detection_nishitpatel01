@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="static/assets/css/bootstrap.min.css">
+<!--
 <link rel="stylesheet" type="text/css" href="static/assets/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="static/assets/css/animate.css">
 <link rel="stylesheet" type="text/css" href="static/assets/css/font.css">
@@ -14,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="static/assets/css/jquery.fancybox.css">
 <link rel="stylesheet" type="text/css" href="static/assets/css/theme.css">
 <link rel="stylesheet" type="text/css" href="static/assets/css/style.css">
-
+-->
 
 <!--[if lt IE 9]>
 <script src="static/assets/js/html5shiv.min.js"></script>
@@ -33,7 +34,7 @@
   <header id="header">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
-	  
+<!--	  
  <section id="newsSection">
     <div class="row">
       <div class="col-lg-12 col-md-12">
@@ -61,7 +62,6 @@
       </div>
     </div>
   </section>
-	  
         <div class="header_top">
           <div class="header_top_left">
           </div>
@@ -90,6 +90,7 @@
     </nav>
   </section>
  
+-->  
   <section id="sliderSection">
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-8">
@@ -98,11 +99,13 @@
             <div class="slider_article">
 			  <div class="form-group">
                   <h2><span>Paste Your News Text Here: </span></h2>
-                <form action="{{ url_for('predict')}}" method="POST" onSubmit="return saveComment();" >
+                <form action="{{ url_for('predict')}}" method="POST"> <!-- onSubmit="return saveComment();" > -->
                   <textarea name="news" id="cmtx_comment" class="form-control" rows="10" ></textarea>
                   <button type="submit" class="btn btn-primary btn-lg">Predict</button>
-                  <button type="button" class="button1 "  onclick="myFunction1()" ></button>
-                    <h4 id ="demo1" style="font-size:25px; position: absolute; top: 345px" span style="color:#FFFFFF";></h4>
+                  <h4>{{prediction}}</h4>
+                  <!--
+                    <button type="button" class="button1 "  onclick="myFunction1()" ></button>
+                    <h4 id ="demo1" style="font-size:25px; position: absolute; top: 345px" span style="color:#FFFFFF;">{{prediction}}</h4>
                     <script>
                     function myFunction1() {
                     document.getElementById("demo1").innerHTML = 'Prediction of the News :  Looking Fake⚠ News📰';
@@ -119,8 +122,10 @@
                       localStorage.clear();
                       }
                     </script>
+                    -->
                   </form>
               </div>
+            <!--
               <button  class="button1"  onclick="myFunction()" ></button>
 
                    <h4 id ="demo" style="font-size:25px; position: absolute; top: 345px" span style="color:#FFFFFF";></h4>
@@ -130,13 +135,13 @@
                    }
 
               </script>
-
+            -->
             </div>
           </div>
           
         </div>
       </div>
-
+<!--
       <div class="col-lg-4 col-md-4 col-sm-4">
         <div class="latest_post">
           <h2><span>Fake News</span></h2>
@@ -238,11 +243,12 @@
 </div>
 <script src="static/assets/js/jquery.min.js"></script>
 <script src="static/assets/js/wow.min.js"></script>
-<script src="static/assets/js/bootstrap.min.js"></script>
 <script src="static/assets/js/slick.min.js"></script>
 <script src="static/assets/js/jquery.li-scroller.1.0.js"></script>
 <script src="static/assets/js/jquery.newsTicker.min.js"></script>
 <script src="static/assets/js/jquery.fancybox.pack.js"></script>
 <script src="static/assets/js/custom.js"></script>
+-->
+<script src="static/assets/js/bootstrap.min.js"></script>
 </body>
 </html>
